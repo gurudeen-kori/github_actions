@@ -1,4 +1,4 @@
-name: hello workflow
+name: hello gurudeen_kori
 on: 
   push:
     branches: [main]
