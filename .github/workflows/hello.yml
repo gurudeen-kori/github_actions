@@ -15,3 +15,14 @@ jobs:
         run: echo "hello $USER"
       - name: say hello  to user user
         run: echo "hello $USER"
+  details-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: docker-version
+        run: docker --version
+      - name: python ka version
+        run: python3 --version 
+    
+
+
+
