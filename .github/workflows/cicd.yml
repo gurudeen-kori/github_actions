@@ -9,7 +9,7 @@ jobs:
       - name: clone code from github
         run: echo " clonning code from github " 
   build:
-    runs-on: ubuntu-latast
+    runs-on: ubuntu-latest
     steps:
       - name: Build container docker
         run: echo " Building docker container"
