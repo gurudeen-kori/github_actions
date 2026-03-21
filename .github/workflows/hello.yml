@@ -1,9 +1,12 @@
 name: hello gurudeen_kori
+#kab run hoga
 on: 
   push:
     branches: [main]
 jobs:
+# ye job ka name ai
   greet:
+#kaha run hoga 
     runs-on: ubuntu-latest
     steps:
       - name: say hellow to user continue-on-error
