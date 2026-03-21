@@ -9,3 +9,15 @@ database:
   credentials:
     user: admin
     password: secret123
+
+startup_script_literal: |
+  #!/bin/bash
+  echo "Starting server..."
+  sudo systemctl start nginx
+  echo "Server started"
+
+startup_script_folded: >
+  #!/bin/bash
+  echo "Starting server..."
+  sudo systemctl start nginx
+  echo "Server started"
