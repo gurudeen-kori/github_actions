@@ -3,6 +3,8 @@ name: hello gurudeen_kori
 on: 
   push:
     branches: [main]
+    paths: 
+      - '**.html'
 jobs:
 # ye job ka name ai
   greet:
