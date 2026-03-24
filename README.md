@@ -70,7 +70,7 @@ database:
 
 ## 📁 Task 4: Multi-line Strings
 
-### Updated server.yaml
+### Updated  server.yaml
 
 ```yaml
 startup_script_literal: |
