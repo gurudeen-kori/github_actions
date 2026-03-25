@@ -4,9 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: "Select environment (staging/production)"
+        description: "Choose environment"
         required: true
-        default: "staging"
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   print-env:
