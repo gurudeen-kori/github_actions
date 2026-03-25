@@ -1,19 +1,22 @@
 name: schedule
+
 on: 
   schedule:
-    - cron: 56 20 * * *
+    - cron: "5 21 * * *"
+  workflow_dispatch:   # optional (manual run button)
 
 jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: hello $USER 
+      - name: hello user 
         run: echo "hello this is $USER"
-      - name: create your own file 
+
+      - name: create folder 
         run: mkdir $USER
 
   os_information:
     runs-on: ubuntu-latest
     steps:
-      - name: your os in formation
+      - name: print os info
         run: cat /etc/os-release
