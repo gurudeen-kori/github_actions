@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: hello $USER 
-        run: hello this is $USER
+        run: echo "hello this is $USER"
       - name: create your own file 
         run: mkdir $USER
 
