@@ -1,7 +1,7 @@
 name: schedule
 on: 
   schedule:
-    - cron: 45 20 * * *
+    - cron: 50 20 * * *
 
 jobs:
   greet:
@@ -13,6 +13,7 @@ jobs:
         run: mkdir $USER
 
   os_information:
+    runs-on: ubuntu-latest
     steps:
       - name: your os in formation
         run: cat /etc/os-release
