@@ -30,4 +30,4 @@ jobs:
           fi
 
       - name: Run linter
-        run: flake8 app.py
+        run: flake8 .
