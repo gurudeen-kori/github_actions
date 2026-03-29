@@ -1,0 +1,17 @@
+name: pre-installed tools 
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  
+  pre-installed tools:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: check tools
+        run: 
+          - docker --version
+          - python --version
+          - node --version
+          - git --version
