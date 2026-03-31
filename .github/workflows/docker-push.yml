@@ -24,6 +24,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          file: ./github/workflows/Dockerfile
           push: true
           tags: | 
             ${{ vars.DOCKER_USERNAME }}/github-action-app:${{ github.ref_name }}
