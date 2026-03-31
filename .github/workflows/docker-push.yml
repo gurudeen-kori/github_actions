@@ -26,6 +26,7 @@ jobs:
           context: .
           push: true
           tags: | 
+            ${{ vars.DOCKER_USERNAME }}/github-action-app:${{ github.ref_name }}
             ${{ vars.DOCKER_USERNAME }}/github-action-app:latest
             ${{ vars.DOCKER_USERNAME }}/github-action-app:${{ github.sha}}
 
