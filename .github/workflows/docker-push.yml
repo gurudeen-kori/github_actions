@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-    
+
 
 jobs:
   build-and-push:
@@ -26,7 +26,7 @@ jobs:
           context: .
           push: true
           tags: | 
-            ${{ vars.DOCKER_USERNAME }}/github-action-app:${{ github.GITHUB_HEAD_REF }}
+            ${{ vars.DOCKER_USERNAME }}/github-action-app:${{ github.ref }}
             ${{ vars.DOCKER_USERNAME }}/github-action-app:latest
-            ${{ vars.DOCKER_USERNAME }}/github-action-app:${{ github.GITHUB_SHA }}
+            ${{ vars.DOCKER_USERNAME }}/github-action-app:${{ github.sha}}
 
