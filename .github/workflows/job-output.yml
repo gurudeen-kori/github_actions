@@ -24,4 +24,4 @@ jobs:
 
     steps:
       - name: Use output from previous job
-        run: echo "Date from previous job: ${{ needs.set-date.outputs.today }}"
+        run: echo "Date from previous job: ${{ needs.set-date.outputs.today }}
