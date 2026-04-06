@@ -1,13 +1,12 @@
 name: Job Outputs Demo
 
-on: [push]
+on: push
 
 jobs:
   set-date:
     runs-on: ubuntu-latest
     outputs:
       today: ${{ steps.date.outputs.today }}
-
     steps:
       - name: Get today's date
         id: date
@@ -16,7 +15,6 @@ jobs:
   use-date:
     runs-on: ubuntu-latest
     needs: set-date
-
     steps:
-      - name: Use output from previous job
-        run: echo "Date from previous job: ${{ needs.set-date.outputs.today }}"
+      - name: Print date from previous job
+        run: echo "Date: ${{ needs.set-date.outputs.today }}"
