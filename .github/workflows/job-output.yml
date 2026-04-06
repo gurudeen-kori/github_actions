@@ -18,4 +18,4 @@ jobs:
     needs: set-date
     steps:
       - name: Print date
-        run: echo "Date from previous job: ${{ needs.set-date.outputs.today }}"
+        run: echo "Date: ${{ needs.set-date.outputs.today }}"
