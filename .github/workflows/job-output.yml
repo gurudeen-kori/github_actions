@@ -1,15 +1,10 @@
-name: setting and using job outputs
+name: Job Outputs Demo
 
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+on: [push]
 
 jobs:
   set-date:
     runs-on: ubuntu-latest
-
-    # create today jobs output 
     outputs:
       today: ${{ steps.date.outputs.today }}
 
@@ -24,4 +19,4 @@ jobs:
 
     steps:
       - name: Use output from previous job
-        run: echo "Date from previous job: ${{ needs.set-date.outputs.today }}
+        run: echo "Date from previous job: ${{ needs.set-date.outputs.today }}"
