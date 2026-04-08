@@ -6,7 +6,7 @@ on:
 
 jobs:
     env:
-      DOKHUB_USER: ${{ DOCKERHUB_USERNAME }}
+      DOKERHUB_USER: ${{ DOCKERHUB_USERNAME }}
     deploy:
         runs-on: self-hosted
         steps:
