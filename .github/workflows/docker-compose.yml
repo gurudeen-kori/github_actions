@@ -1,0 +1,6 @@
+services:
+
+    web:
+      image: ${DOCKER_USERNAME}/github-action-app:tagname
+      ports:
+        - "80:80"
