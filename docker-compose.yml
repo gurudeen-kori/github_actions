@@ -1,5 +1,5 @@
 services:
   web:
-    image: ${DOCKER_USER}/github-action-app:latest
+    build: .
     ports:
       - "5000:5000"
