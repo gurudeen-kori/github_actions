@@ -1,5 +1,5 @@
 services:
   web:
-    image: ${DOCKER_USER}/github-action-app:ea94b1cfb46d64ef6c124c550d86141ddc005616
+    image: ${DOCKER_USER}/github-action-app:latest
     ports:
       - "80:80"
