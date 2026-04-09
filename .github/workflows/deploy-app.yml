@@ -20,4 +20,4 @@ jobs:
         run: docker system prune -af
 
       - name: Deploy app
-        run: docker compose up  --build
+        run: docker compose up  -d --build
