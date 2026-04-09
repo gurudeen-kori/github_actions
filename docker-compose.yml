@@ -1,5 +1,5 @@
 services:
   web:
-    mage: ${DOCKER_USERNAME}/github-action-app:tagname
+    image: ${DOCKER_USERNAME}/github-action-app:tagname
     ports:
       - "80:80"
