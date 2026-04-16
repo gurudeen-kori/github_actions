@@ -13,7 +13,7 @@ jobs:
                 username: ${{ vars.DOCKER_USER }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
             - name: scan image with trivy
-              uses: aquasecurity/trivy-action@0.33.0
+              uses: aquasecurity/trivy-action@v0.33.0
               with:
                 security: 'CRITICAL'
                 exit-code: '1'
