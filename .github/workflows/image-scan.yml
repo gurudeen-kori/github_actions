@@ -17,3 +17,7 @@ jobs:
               with:
                 security: 'CRITICAL'
                 exit-code: '1'
+                image-ref: ${{ vars.DOCKER_USER }}/github-action-app:latest
+                severity: CRITICAL,HIGH
+                ignore-unfixed: true
+                format: table
