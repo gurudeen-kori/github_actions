@@ -2,7 +2,12 @@
 name: Image scanner
 
 on:
-    workflow_call:
+  workflow_call:
+    secrets:
+      DOCKERHUB_TOKEN:
+        required: true
+      DOCKER_USERNAME:
+        required: true
 jobs:
     image-scanner:
         runs-on: ubuntu-latest
