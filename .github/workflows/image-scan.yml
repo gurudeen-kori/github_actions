@@ -17,5 +17,4 @@ jobs:
               with:
                 security: 'CRITICAL'
                 exit-code: '1'
-                secrets:
-                  DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+                
