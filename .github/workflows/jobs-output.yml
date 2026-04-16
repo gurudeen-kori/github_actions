@@ -1,7 +1,6 @@
 name: Job Outputs Demo
 
 on:
-  push:
     
   workflow_dispatch:
 

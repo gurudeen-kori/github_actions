@@ -1,6 +1,7 @@
 name: Hosted Runners Demo
 
-on: push
+on:
+  workflow_dispatch:
 
 jobs:
   ubuntu-job:

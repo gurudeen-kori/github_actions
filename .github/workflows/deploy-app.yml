@@ -1,11 +1,10 @@
 name: deploy app
 
 on:
-  workflow_dispatch:
-  
   push:
     paths:
       - 'index.html'
+  workflow_dispatch:
 
 
 jobs:
