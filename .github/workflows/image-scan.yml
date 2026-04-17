@@ -24,4 +24,7 @@ jobs:
           image-ref: ${{ vars.DOCKER_USER }}/github-action-app:latest
           severity: CRITICAL,HIGH
           exit-code: 1
+      - name: Logout from Docker Hub
+        if: always()
+        run: docker logout
           
