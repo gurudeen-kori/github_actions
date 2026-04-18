@@ -24,12 +24,18 @@ jobs:
       - name: Clear Trivy cache
         run: rm -rf ~/.cache/trivy
 
+      - name: Install Trivy manually
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+          echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+          sudo apt-get install -y trivy
+
       - name: Run Trivy scan
-        uses: aquasecurity/trivy-action@v0.33.0
-        with:
-          image-ref: ${{ vars.DOCKER_USER }}/github-action-app:latest
-          severity: CRITICAL,HIGH
-          exit-code: 1
+        run: |
+          trivy image --severity CRITICAL,HIGH --exit-code 1 ${{ secrets.DOCKER_USERNAME }}/github-action-app:latest
       
       - name: Logout from Docker Hub
         if: always()
