@@ -21,8 +21,11 @@ jobs:
         with:
           username: ${{ vars.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Clear Trivy cache
+        run: rm -rf ~/.cache/trivy
+
       - name: Run Trivy scan
-        uses: aquasecurity/trivy-action@v0.33.0
+        uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: ${{ vars.DOCKER_USER }}/github-action-app:latest
           severity: CRITICAL,HIGH
