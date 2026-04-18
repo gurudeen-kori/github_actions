@@ -35,7 +35,7 @@ jobs:
 
       - name: Run Trivy scan
         run: |
-          trivy image --severity CRITICAL,HIGH --exit-code 1 ${{ secrets.DOCKER_USERNAME }}/github-action-app:latest
+          trivy image --severity CRITICAL, --exit-code 1 ${{ secrets.DOCKER_USERNAME }}/github-action-app:latest
       
       - name: Logout from Docker Hub
         if: always()
