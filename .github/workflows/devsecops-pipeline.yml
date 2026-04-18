@@ -16,5 +16,5 @@ jobs:
     image-scan:
         uses: ./.github/workflows/image-scan.yml
         secrets:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USER }}
+          DOCKER_USERNAME: ${{ vars.DOCKER_USER }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
