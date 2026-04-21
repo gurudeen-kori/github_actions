@@ -25,7 +25,6 @@ jobs:
     build:
         needs: [code-quality, secret-scan, dependency-scan, docker-lint, image-scan]
         uses: ./.github/workflows/docker-build-push.yml
-        secrets:  
-          DOCKER_USERNAME: ${{ vars.DOCKER_USER }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        secrets: inherit
+          
          
