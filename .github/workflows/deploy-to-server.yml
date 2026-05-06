@@ -45,5 +45,5 @@ jobs:
                   
                   export DOCKERHUB_USER=${{ vars.docker_user }}
                   export DOCKER_TAG=${{ github.event.workflow_run.head_sha }}
-                  echo ${{secrets.DOCKERHUB_TOKEN }} | docker login -u ${{secrets.DOCKER_USER }} --password-stdin
+                  echo ${{secrets.DOCKERHUB_TOKEN }} | docker login -u ${{vars.DOCKER_USER }} --password-stdin
                   cd ~/devops && docker compose down && docker compose up -d --build --force-recreate --pull always
