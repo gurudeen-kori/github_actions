@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- 🔥 Mobile Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Certificate</title>
 
     <style>
@@ -11,11 +15,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-family: Arial, sans-serif;
         }
 
+        /* Button */
         .btn {
-            margin: 20px;
-            padding: 12px 25px;
+            margin: 15px;
+            padding: 12px 20px;
             background: #0072ff;
             color: white;
             border-radius: 8px;
@@ -24,27 +30,45 @@
             font-size: 16px;
         }
 
+        /* Certificate Container */
         .certificate-container {
-            width: 794px;   /* A4 width */
-            height: 1123px; /* A4 height */
+            width: 794px;
+            height: 1123px;
+            max-width: 95vw;   /* 🔥 mobile fit */
+            height: auto;      /* 🔥 maintain ratio */
+            aspect-ratio: 794 / 1123;
             background: white;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
+        /* Image */
         .certificate-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .btn {
+                width: 90%;
+                font-size: 14px;
+            }
+        }
+
+        /* Print */
         @media print {
             body {
                 background: none;
             }
+
             .btn {
                 display: none;
             }
+
             .certificate-container {
+                width: 794px;
+                height: 1123px;
                 box-shadow: none;
             }
         }
@@ -56,7 +80,7 @@
     <!-- Download Button -->
     <button class="btn" onclick="window.print()">⬇ Download Certificate</button>
 
-    <!-- Certificate Image -->
+    <!-- Certificate -->
     <div class="certificate-container">
         <img src="{{ url_for('static', filename='certificate.jpg') }}" alt="Certificate">
     </div>
