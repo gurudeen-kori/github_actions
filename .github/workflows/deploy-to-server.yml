@@ -43,7 +43,7 @@ jobs:
                 script: |
                   echo "running app "
                   
-                  export DOCKERHUB_USER=${{ secrets.DOCKER_USER }}
+                  export DOCKER_USER=${{ secrets.DOCKER_USER }}
                   export DOCKER_TAG=${{ github.event.workflow_run.head_sha }}
                   echo ${{secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
                   cd ~/devops && docker compose down && docker compose up -d --build --force-recreate --pull always
