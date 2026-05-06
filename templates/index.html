@@ -2,50 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Certificate</title>
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: #f4f6f8;
-            font-family: Arial, sans-serif;
+            background: #f4f4f4;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
         }
 
         .certificate-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .certificate-container h1 {
-            margin-bottom: 15px;
-            font-size: 24px;
-            color: #333;
-        }
-
-        .certificate-img {
-            max-width: 100%;
+        .certificate-container img {
+            width: 90%;
             height: auto;
-            border-radius: 8px;
-            border: 2px solid #ddd;
+            max-height: 90vh;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 10px;
         }
 
         .download-btn {
-            margin-top: 15px;
-            display: inline-block;
-            padding: 10px 20px;
+            position: fixed;
+            bottom: 30px;
+            padding: 12px 25px;
             background: #007bff;
-            color: #fff;
+            color: white;
             text-decoration: none;
-            border-radius: 6px;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
         .download-btn:hover {
@@ -56,16 +52,13 @@
 
 <body>
 
-<div class="certificate-container">
-    <h1>My Certificate</h1>
+    <div class="certificate-container">
+        <img src="{{ url_for('static', filename='certificate.jpg') }}" alt="Certificate">
+    </div>
 
-    <!-- Replace with your certificate image -->
-    <img src="certificate.jpg" alt="Certificate" class="certificate-img">
-
-    <!-- Optional download button -->
-    <br>
-    <a href="certificate.jpg" download class="download-btn">Download Certificate</a>
-</div>
+    <a href="{{ url_for('static', filename='certificate.jpg') }}" download class="download-btn">
+        Download Certificate
+    </a>
 
 </body>
 </html>
