@@ -7,4 +7,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "app.py"]
+EXPOSE 80
+
+CMD ["gunicorn","--bind", "0.0.0.0.0:80", "app.py"]
