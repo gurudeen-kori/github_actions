@@ -20,6 +20,9 @@ jobs:
                 key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
                 script: |
                   echo "starting deployment"
+                  sudo apt-get update 
+                  sudo apt-get install docker.io docker-compose-v2 -y 
+                  sudo usermod -aG docker $USER && newgrp docker
                   mkdir -p devops
                   
             - name: Copy the docker-compose file 
@@ -39,9 +42,7 @@ jobs:
                 key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
                 script: |
                   echo "running app "
-                  sudo apt-get update 
-                  sudo apt-get install docker.io docker-compose-v2 -y 
-                  sudo usermod -aG docker $USER && newgrp docker
+                  
                   export DOCKERHUB_USER=${{ vars.docker_user }}
                   export DOCKER_TAG=${{ github.event.workflow_run.head_sha }}
                   echo ${{secrets.DOCKERHUB_TOKEN }} | docker login -u ${{secrets.DOCKER_USER }} --password-stdin
